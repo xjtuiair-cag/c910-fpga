@@ -1,6 +1,54 @@
-# C906 on FPGA
+# C910 with Linux on FPGA
+
+## Introduction
+
+>  This project is from CAG lab of Xi'an JiaoTong University(XJTU). 
+
+We terms at ctreate CPU evaluation platform on FPAG, and the CPU we choose should satisfied these key features below.
+
+* The CPU should adapts to high performance  computing scenarios
+* The CPU should be open-source which can be customized according to our demands
+* The CPU should be compatible with performance statistics tools like Perf
+
+According to these key features, We choose Xuantie-C910 as the basic design. 
+
+
 
 ## Prepare
+
+### Software
+
+* vivado 2022.2
+
+* debugserver
+
+### Hardware
+
+* FACE-VUP-13B develop board (FPGA: VU13P)
+
+  The board where we implement the CPU.
+
+* Alinx FMC sub board (FL1010) if needed
+
+  Connect this sub board to VU13P FPGA to expand more GPIO.
+
+* CKLink board
+
+  Connect this board to FPGA to download data to DDR.
+
+* UART-USB board
+
+  In order to realize the interaction between PC and CPU, this board should be connected to the FPGA. 
+
+  
+
+## Quick Start
+
+1. Connect FPGA to PC
+2. Write Bitstream to FPGA
+3. Open DebugServerConsole to connect to the CPU
+4. Use GDB tools to write data to DDR
+5. Start the OS
 
 
 
@@ -30,10 +78,6 @@
   ```
   ./run.sh 192.168.1.1:1025 ice_fpga 1
   ```
-
-  
-
-  
 
 * Start **DebugServerConsole**:
 
@@ -66,7 +110,11 @@
   cd ../ ; gzip rootfs_debug.cpio > rootfs_debug.cpio.gz
   ```
 
+* Perf Command:
+
+  ```
+  perf stat -e L1-dcache-load-misses -e L1-dcache-loads -e L1-dcache-store-misses -e L1-dcache-stores -e L1-icache-load-misses  -e L1-icache-loads -e LLC-load-misses -e LLC-loads -e LLC-store-misses -e LLC-stores -e dTLB-load-misses -e dTLB-loads -e dTLB-store-misses -e dTLB-stores -e iTLB-load-misses -e iTLB-loads ls
+  ```
+
   
-
-
 
