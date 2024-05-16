@@ -45,9 +45,22 @@ According to these key features, We choose Xuantie-C910 as the basic design.
 ## Quick Start
 
 1. Connect FPGA to PC
+
 2. Write Bitstream to FPGA
+
+   >Related files:
+   >
+   >​	./Start_C910/c910_wrapper.bit 
+   >​	./Start_C910/c910_wrapper.ltx
+
 3. Open DebugServerConsole to connect to the CPU
+
+   > Related files:
+   >
+   > ​	./Start_C910/gdbinit.ice_fpga.txt
+
 4. Use GDB tools to write data to DDR
+
 5. Start the OS
 
 
