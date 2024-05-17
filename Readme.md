@@ -129,5 +129,9 @@ According to these key features, We choose Xuantie-C910 as the basic design.
   perf stat -e L1-dcache-load-misses -e L1-dcache-loads -e L1-dcache-store-misses -e L1-dcache-stores -e L1-icache-load-misses  -e L1-icache-loads -e LLC-load-misses -e LLC-loads -e LLC-store-misses -e LLC-stores -e dTLB-load-misses -e dTLB-loads -e dTLB-store-misses -e dTLB-stores -e iTLB-load-misses -e iTLB-loads ls
   ```
 
+Full Project URL:
+链接：https://pan.baidu.com/s/12K88M6ZaVnxCssfHfxp15A?pwd=0517 
+提取码：0517
+
   
 
